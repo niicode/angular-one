@@ -1,0 +1,7 @@
+<h3>Click here to set the status of your server</h3>
+<p>Your server is currently {{getStatus()}}</p>
+<input type="text" class="form-control" (input)="handleServerChange($event)">
+<div>
+  <p>{{value}}</p>
+</div>
+<button (click) = "onClick()" class="btn btn-warning">{{getStatus()}}</button>
