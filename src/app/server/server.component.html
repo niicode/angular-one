@@ -1,7 +1,6 @@
 <h3>Click here to set the status of your server</h3>
-<p>Your server is currently {{getStatus()}}</p>
-<input type="text" class="form-control" (input)="handleServerChange($event)">
-<div>
-  <p>{{value}}</p>
-</div>
-<button (click) = "onClick()" class="btn btn-warning">{{getStatus()}}</button>
+<input type="text" placeholder="Enter server name" class="form-control" [(ngModel)]="userName">
+<button class="btn btn-warning" (click)= "onCreated()" [disabled] = "userName === ''">Set Server</button>
+<p [ngStyle] = "{backgroundColor: getColor()}" [ngClass] = "{online: serverStatus === 'online'}">The server is {{ serverStatus }}</p>
+<p *ngIf = "hasName">A server was started and its started on: {{ Server }}</p>
+
